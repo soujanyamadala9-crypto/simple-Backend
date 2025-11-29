@@ -4,7 +4,7 @@ import threading
 import random
 import time
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Store latest temperature
 latest_data = {"id": 1, "temperature": None}
@@ -25,4 +25,5 @@ if __name__ == "__main__":
     threading.Thread(target=update_temperature, daemon=True).start()
     
     # Run the Flask server
+
     app.run(host="0.0.0.0", port=5000)
